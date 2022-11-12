@@ -78,7 +78,9 @@ public class Movements : MonoBehaviour
                 Pursuit(futurePos());
                 break;
         }
-
+        
+        
+        
         if (status != steeringBehavior.Evade)
         {
             _body.AddForce(desiredVelocity);
@@ -202,8 +204,8 @@ public class Movements : MonoBehaviour
             }
         }
 
-        velXZ.x /= neighborCount;
-        velXZ.z /= neighborCount;
+        velXZ.x *= -1;
+        velXZ.z *= -1;
         Vector3 v = new Vector3(velXZ.x - transform.position.x, velXZ.y, velXZ.z - transform.position.z);
         Vector3.Normalize(v);
         return velXZ;
